@@ -1,7 +1,8 @@
 import spacy
 from itertools import chain
-nlp = spacy.load("es_core_news_sm")
+from googletrans import Translator
 def get_an(sen):
+    nlp = spacy.load("es_core_news_sm")
     an_set = set()
     doc = nlp(sen)
     for token in doc:
@@ -12,5 +13,9 @@ def get_an(sen):
                   an_set.add(pair)
     return an_set
 
-text = "La energía verde se usa mucho con feos cascos"
+def translate(data):
+    translator = Translator()
+    return translator.translate(data).text
+
+text = "La energía verde tiene potencial ilimitado."
 print(get_an(text))
