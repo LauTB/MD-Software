@@ -4,7 +4,7 @@ import keras
 import numpy as np
 import math
 def predict(data):
-    model = load_model(r'files\an_metaphor_lstm.h5',
+    model = load_model(r'files/an_metaphor_lstm.h5',
                     custom_objects={
                         'loss': keras.losses.CategoricalCrossentropy(),
                         'f1': f1,
