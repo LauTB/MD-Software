@@ -28,7 +28,8 @@ def embeddings(tokens, filepath=r'files\wiki-news-300d-1M.magnitude'):
         """
         padding_marker = '*'
         dimensions = 300
-        vectors = magnitude.Magnitude(filepath)
+        url = 'http://magnitude.plasticity.ai/fasttext+subword/wiki-news-300d-1M.magnitude'
+        vectors = magnitude.Magnitude(url, stream= True)
         return_list = []
         for token in tokens:
             if token == padding_marker:
